@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="标题">
+		<meta content="telephone=no" name="format-detection" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="baidu-site-verification" content="VzMz7nndl2" />
+		<title>常见问题-Weker维氪</title>
+		<meta name="keywords" content="Weker,维氪"/>
+    	<meta name="description" content="Weker秉持“智慧成就未来，智能改变生活”的信念，致力于为广大用户提供高品质、高性价比的智能化家居产品和服务。通过对智能门锁的管理和操作实现手机APP开锁，安全、便捷的同时，为生活增添科技和趣味。未来将连接更多家居产品，真正实现“智慧生活只需指尖轻轻一点”。"/>
+		<link rel="stylesheet" href="mincss/index.css" />
+	</head>
+	<body>
+		<div id="questionHtml" class="html-box">
+			<my-nav nav="4"></my-nav>
+			<section class="section1">
+				<div>
+					<h1>常见问题</h1>
+					<p>help center</p>
+				</div>
+			</section>
+			<div class="main" id="content">
+				{{index}}
+				<div class="item"  v-for="kind in kinds">
+					<p class="title"><span>{{kind.title}}</span></p>
+					<div class="panel-body">
+						<ul v-for="question in kind.content">
+							<li class="q" v-text="question.q"></li>
+							<li class="a" v-text="question.a"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<my-footer></my-footer>
+		</div>
+	</body>
+	<script type="text/javascript" src="dist/del.min.js"></script>
+	<script type="text/javascript" src="dist/global.js"></script>
+</html>
