@@ -46,7 +46,7 @@ Vue.component('my-footer', {
 	template: '<footer>\
 				<ul>\
 					<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMjkzMjc5MQ==&mid=2247483806&idx=1&sn=0609de84902249cb6bb226947ce6c8fa#rd">公众号</a></li>\
-					<li><a href="http://www.weker.me/" @click="link">电脑版</a></li>\
+					<li><a :href="getUrl" @click="link">电脑版</a></li>\
 					<li><a href="tel:400-150-5088">客服电话</a></li>\
 					<li><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.zhidian.caogen.smartlock">App下载</a></li>\
 				</ul>\
@@ -55,7 +55,11 @@ Vue.component('my-footer', {
 			methods:{
 				link:function(){
 					document.cookie = 'gotopc=true';
+					this.getUrl=this.getUrl+"?_t="+Date.parse(new Date());
 				}
+			},
+			data:function(){
+				return {getUrl:"http://www.weker.me/"}
 			}
 
 });
