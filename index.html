@@ -158,6 +158,11 @@
 		<script type="text/javascript" src="dist/global.js"></script>
 	<script>
 		$(function() {
+			var banner = new Swiper('#banner', {
+				loop: true,
+				noSwiping: true,
+				autoplayDisableOnInteraction: false,
+			});
 			var index = 0;
 			$(".attach_box .slideInfo").eq(index).fadeIn();
 			var mySwiper = new Swiper('#iphoneSlide', {
@@ -180,11 +185,7 @@
 			$('.arrow-right').on('click', function(e) {
 				mySwiper.swipeNext();
 			});
-			var banner = new Swiper('#banner', {
-				loop: true,
-				noSwiping: true,
-				autoplayDisableOnInteraction: false,
-			});
+			
 
 		})
 	</script>
